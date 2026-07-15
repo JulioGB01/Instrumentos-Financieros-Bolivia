@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Comparativa editorial de rendimientos, plazos y niveles de riesgo de instrumentos financieros disponibles en Bolivia.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Instrumentos Financieros Bolivia | Edición 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <div class="page-shell">
+        <header class="masthead">
+            <div class="masthead__bar" aria-label="Información de la edición">
+                <span>Observatorio financiero</span>
+                <span>Bolivia · Edición 2026</span>
+            </div>
+
+            <div class="masthead__body">
+                <p class="kicker">Panorama de inversión</p>
+                <h1>Instrumentos Financieros Bolivia</h1>
+                <p class="lead">
+                    Una lectura comparativa de rendimientos anualizados, monedas, plazos y niveles de riesgo del mercado boliviano.
+                </p>
+            </div>
+
+            <dl class="summary" aria-label="Resumen de la publicación">
+                <div class="summary__item">
+                    <dt>Instrumentos</dt>
+                    <dd id="instrument-count">—</dd>
+                </div>
+                <div class="summary__item">
+                    <dt>Categorías</dt>
+                    <dd id="category-count">—</dd>
+                </div>
+                <div class="summary__item">
+                    <dt>Monedas</dt>
+                    <dd id="currency-count">—</dd>
+                </div>
+                <div class="summary__item summary__item--text">
+                    <dt>Criterio inicial</dt>
+                    <dd>Mayor rendimiento</dd>
+                </div>
+            </dl>
+        </header>
+
+        <main id="contenido">
+            <section class="market-section" aria-labelledby="market-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-number">01 / Comparativa</p>
+                        <h2 id="market-title">Rendimientos por instrumento</h2>
+                    </div>
+                    <p>
+                        Use los filtros para acotar la lectura. Los porcentajes se presentan como referencias anualizadas y no constituyen una recomendación de inversión.
+                    </p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="filter-group" aria-label="Filtrar por categoría" role="group">
+                        <button class="filter-button is-active" type="button" data-category="todos" aria-pressed="true">Todos</button>
+                        <button class="filter-button" type="button" data-category="alternativos" aria-pressed="false">Alternativos</button>
+                        <button class="filter-button" type="button" data-category="fondos" aria-pressed="false">Fondos</button>
+                        <button class="filter-button" type="button" data-category="soberanos" aria-pressed="false">Soberanos / BCB</button>
+                        <button class="filter-button" type="button" data-category="corporativos" aria-pressed="false">Corporativos</button>
+                        <button class="filter-button" type="button" data-category="dpf" aria-pressed="false">Depósitos a plazo</button>
+                    </div>
+
+                    <div class="toolbar__tools">
+                        <label class="field" for="instrument-search">
+                            <span>Buscar</span>
+                            <input id="instrument-search" type="search" placeholder="Instrumento o fuente" autocomplete="off">
+                        </label>
+                        <label class="field" for="sort-by">
+                            <span>Ordenar</span>
+                            <select id="sort-by">
+                                <option value="yield-desc">Mayor rendimiento</option>
+                                <option value="yield-asc">Menor rendimiento</option>
+                                <option value="name-asc">Nombre A–Z</option>
+                                <option value="risk-asc">Menor riesgo</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="results-line" aria-live="polite">
+                    <p id="results-count">Cargando instrumentos…</p>
+                    <p class="results-line__hint">Deslice horizontalmente para ver toda la tabla en pantallas pequeñas.</p>
+                </div>
+
+                <div class="table-frame" tabindex="0" role="region" aria-label="Tabla comparativa de instrumentos financieros">
+                    <table>
+                        <caption>Comparación de instrumentos financieros en Bolivia, edición 2026</caption>
+                        <colgroup>
+                            <col class="col-instrument">
+                            <col class="col-currency">
+                            <col class="col-yield">
+                            <col class="col-term">
+                            <col class="col-risk">
+                            <col class="col-source">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Instrumento</th>
+                                <th scope="col">Moneda</th>
+                                <th scope="col" class="numeric">Rend. anual</th>
+                                <th scope="col">Plazo</th>
+                                <th scope="col">Riesgo</th>
+                                <th scope="col">Fuente</th>
+                            </tr>
+                        </thead>
+                        <tbody id="instrument-table-body"></tbody>
+                    </table>
+                </div>
+
+                <noscript>
+                    <p class="noscript-message">Active JavaScript para consultar y filtrar la tabla comparativa.</p>
+                </noscript>
+            </section>
+
+            <aside class="editorial-note" aria-labelledby="note-title">
+                <p class="section-number">Nota metodológica</p>
+                <h2 id="note-title">Cómo leer esta tabla</h2>
+                <div class="editorial-note__grid">
+                    <p><strong>Rendimiento.</strong> Se muestra la tasa o el rango anualizado informado para cada instrumento. Cuando existe una tasa escalonada o variable, se conserva esa condición.</p>
+                    <p><strong>Riesgo.</strong> La clasificación sintetiza la descripción disponible y permite comparar, pero no reemplaza una evaluación crediticia, legal o de liquidez.</p>
+                    <p><strong>Alcance.</strong> Las cifras son referenciales, pueden cambiar y deben verificarse con la entidad emisora o la fuente citada antes de tomar una decisión.</p>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="site-footer">
+            <p>Instrumentos Financieros Bolivia</p>
+            <p>Información educativa · No constituye asesoramiento financiero</p>
+        </footer>
+    </div>
+</body>
+</html>
